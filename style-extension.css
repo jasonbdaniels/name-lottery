@@ -1,0 +1,15 @@
+// Copyright Jason Daniels 2018 Licensed under the Academic Free License version 3.0
+
+button {
+  height: 44px;
+  min-width: 100px;
+}
+
+button.small-button {
+  height: inherit;
+  min-width: inherit;
+}
+
+.version {
+  font-size: 0.65em;
+}

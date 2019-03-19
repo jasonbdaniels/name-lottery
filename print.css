@@ -1,0 +1,5 @@
+// Copyright Jason Daniels 2019 Licensed under the Academic Free License version 3.0
+
+@media print {
+    .no-print {display: none;}
+}

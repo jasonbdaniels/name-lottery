@@ -1,0 +1,43 @@
+<!-- Copyright Jason Daniels 2019 Licensed under the Academic Free License version 3.0 -->
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Name Lottery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-extension.css">
+    <link rel="stylesheet" href="print.css" media="print" />
+    <script src="lottery.js"></script>
+    <script src="LotteryViewController.js"></script>
+    <script src="CSVEncoderDecoder.js"></script>
+    <script src="LotteryCSVViewModel.js"></script>
+  </head>
+  <body>
+    <h1 id="titleLabel">File Name</h1>
+
+    <p id="chooseInstruction">Choose a CSV file to randomly pull names from. The file should have one name per line.</p>
+    <input type="file" name="csv-file" id="csvFileInput" accept="text/csv">
+
+    <p id="reviewInstruction">
+      Review the names below, if any are incorrect or not a name:<br><br>
+      &emsp;1. Correct the file<br>
+      &emsp;2. Save it<br>
+      &emsp;3. Chose the file again to refresh the names<br>
+    </p>
+
+    <p id="pullAllInstruction">When ready, press the <i>Pull all</i> button to randomly select 25 names.</p>
+    <button id="pull-all-button" type="button" onclick="lotteryViewController.pullAll()" >Pull all</button>
+
+    <h2 id="pulledNamesTitle" hidden >Pulled Names</h2>
+    <div id="pulled-names"></div>
+
+    <button id="resetButton" class="no-print small-button" type="button" onclick="lotteryViewController.resetStorage()">Reset</button>
+
+    <script>
+      var lotteryViewController = LotteryViewController()
+
+      lotteryViewController.viewDidLoad();
+    </script>
+    <p><i class="version">Version: 1.0.0</i></p>
+  </body>
+</html>
